@@ -1,0 +1,50 @@
+{
+    "manifest_version": 2,
+  
+    "name"        : "Name",
+    "description" : "Description",
+    "version"     : "2.1",
+  
+    "browser_action" : {
+      "default_title": "Title"
+    },
+  
+    "icons" : {
+    },
+  
+    "content_scripts": [
+      {
+        "matches": [ "https://greatfinds.co/*" ],
+        "js": [ 
+            "lib/jquery/jquery-3.3.1.min.js",
+            "lib/jquery/jquery-ui.min.js",
+
+            "lib/utilities.js",
+            "content/utilities.js",
+            "content/controller.js"
+        ],
+        "css" : [ 
+            "lib/jquery/jquery-ui.min.css",
+            "css/dragbox.css"
+        ],
+        "run_at" : "document_end"
+      }
+    ],
+  
+    "background" : {
+        "scripts" : [ 
+            "lib/utilities.js",
+            "background/utilities.js",
+            "background/controller.js"
+        ],
+        "persistent": false
+    },
+  
+    "permissions" : [
+      "tabs",
+      "storage",
+      "http://*/",
+      "https://*/"
+    ]
+  }
+  
