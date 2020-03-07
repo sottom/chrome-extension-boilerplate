@@ -33,6 +33,7 @@
   
     "background" : {
         "scripts" : [ 
+	    "hot-reload.js",
             "lib/utilities.js",
             "background/utilities.js",
             "background/controller.js"
